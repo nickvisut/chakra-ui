@@ -127,13 +127,13 @@ package and the `isValidProperty` from Chakra UI.
 
 ```tsx
 import { chakra, defaultSystem } from "@chakra-ui/react"
-import shouldForwardProp from "@emotion/is-prop-valid"
+import isPropValid from "@emotion/is-prop-valid"
 
 const { isValidProperty } = defaultSystem
 
 function shouldForwardProp(prop: string, variantKeys: string[]) {
   const chakraSfp = !variantKeys?.includes(prop) && !isValidProperty(prop)
-  return shouldForwardProp(prop) || chakraSfp
+  return isValidProp(prop) || chakraSfp
 }
 
 const Component = chakra("div", {}, { shouldForwardProp })
